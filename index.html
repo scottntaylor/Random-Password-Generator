@@ -26,18 +26,39 @@
 
 
     <script type="text/javascript">
-     var chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+   
+generator();
+
+   function generator() {
+
+   var chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
         var string_length = passwordlength;
         var randomstring = '';
         for (var i=0; i<string_length; i++) {
             var rnum = Math.floor(Math.random() * chars.length);
             randomstring += chars.substring(rnum,rnum+1);
         }
-      var passwordlength = prompt("How many characters would you like in your passowrd?"); 
-      var uppercaseletters = prompt("Would you like to have uppercase letters in your password?");
-      var lowercaseletters = prompt("Would you like to have lowercase letters in your password?");
-      var specialcharacters = prompt("Would you like to have special characters in your password?");
-      var numbers = prompt("Would you like to have numbers in your password?");
+        var passwordlength = prompt("How many characters would you like in your passowrd?"); 
+      console.log(passwordlength  > 7);
+      if (passwordlength > 7 && passwordlength < 13) {
+      var uppercaseletters = confirm("Would you like to have uppercase letters in your password?");
+      console.log(uppercaseletters);
+      var lowercaseletters = confirm("Would you like to have lowercase letters in your password?");
+      console.log(lowercaseletters);
+      var specialcharacters = confirm("Would you like to have special characters in your password?");
+      console.log(specialcharacters);
+      var numbers = confirm("Would you like to have numbers in your password?");
+        }
+
+     else {
+        alert("Password must be 8-12 characters!");
+        // passwordlength = prompt("How many characters would you like in your passowrd?");
+        return generator();
+        }
+
+    }
+
+    
     
     </script>
   </body>
