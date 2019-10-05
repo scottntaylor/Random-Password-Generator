@@ -1,61 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Password Generator</title>
-</head>
-
-<body>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="style.css">
-  <script src="script.js"></script>
-    <header class="container">
-      <div class="row ml-5">
-        <div class="col-lg-12" align="center">
-          <h1 class="h1">Password Generator</h1>
-        </div>
-      </div>
-    </header>
-    <section class="container bg-light p-2 m-auto border" align ="center">
-      <div class="row justify-content-center">
-        <div class="col-lg-4 bg-light pb-3 mb-4 border-bottom">
-          <h2 class="h2 text-muted">Generate a Password</h2>
-        </div>
-      </div>
-      <div class="col-lg-12" align="center">
-        <textarea class="form-control text-center m-4" row="10" readonly id="password"
-          placeholder="Your Secure Password" aria-label="Generated Password" style="max-width: 300px;"></textarea>
-      </div>
-      <button onclick="generatePw()" class="btn btn-danger justify-content-center m-3" id="generate">
-        Generate Password
-      </button>
-      <button onclick="doCopy()" class="btn btn-danger justify-content-center m-3" id="copy">
-        Copy to Clipboard
-      </button>
-    </section>
-</body>
-
-
-<!-- <body>
-
-  <container class="container">
-  <header>
-    <h1>Password Generator</h1>
-  </header>
-
-
-  <h2>Generate a Password</h2>
-  <textarea readonly id="password" placeholder="Your Secure Password" aria-label="Generated Password"></textarea>
-  <button id="generate">Generate Password</button>
-  <button id="copy">
-    Copy to Clipboard
-  </button>
-</container> -->
-
-  <!-- <script type="text/javascript">
 
     // The user will be prompted to choose from the following password criteria:
     function choosePwdCriteria() {
@@ -109,7 +51,7 @@
     function generatePassword(passwordLength, characterTypes) {
       alert("generating password");
 
-      chooseCharacterTypes();
+      chooseCharacterTypes(randomstring);
       
       while (randomstring.length < passwordLength) {
         var pick = null;
@@ -147,24 +89,26 @@
 
       var passwordLength = choosePwdCriteria();
       var characterTypes = chooseCharacterTypes();
-      generatePassword(passwordLength, characterTypes);
+      generatePassword(passwordLength, characterTypes, randomstring);
 
       var randomstring = '';
       for (var i = 0; i < passwordlength; i++) {
         var rnum = Math.floor(Math.random() * chars.length);
         randomstring += chars.substring(rnum, rnum + 1);
       }
-
+      console.log(randomstring);
 //Click on Generate Button to create password
 
 
 
 
     // // Add Password to HTML
+    function insertPassword(){
 
-    // var insertPassword = document.querySelector("#password");
-    // insertPassword.textContent = randomstring;
+    var insertPassword = document.querySelector("#password");
+     insertPassword.textContent = randomstring;
 
+    }
     // doucment.getElementByID("password").value = 
 
         
@@ -175,9 +119,4 @@
           //   return generator();
           // }
 
-
-
-  </script> -->
-</body>
-
-</html>
+    }
